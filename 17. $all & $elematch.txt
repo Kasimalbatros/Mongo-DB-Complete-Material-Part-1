@@ -1,0 +1,38 @@
+$all & $ elematch
+--------------------
+
+1. $elemMatch
+
+The $elemMatch operator is used to match documents that contain an array field with at least one element that matches all the specified conditions.
+
+Syntax:
+
+{ field: { $elemMatch: { <query1>, <query2>, ... } } }
+
+Example:
+Find documents where the scores array has at least one element that is greater than 80 and less than 90.
+
+db.collection.find({
+  scores: { $elemMatch: { $gt: 80, $lt: 90 } }
+})
+
+
+
+-==--============-------------------=========================-------------------==========----------
+5. $all
+
+
+The $all operator matches arrays that contain all the specified elements.
+
+Syntax:
+
+{ field: { $all: [ <value1>, <value2>, ... ] } }
+Example:
+Find documents where the tags array contains both "mongodb" and "database".
+
+json
+Copy code
+db.collection.find({
+  tags: { $all: ["mongodb", "database"] }
+})
+These element operators can be combined with other MongoDB query operators to build complex and powerful queries.

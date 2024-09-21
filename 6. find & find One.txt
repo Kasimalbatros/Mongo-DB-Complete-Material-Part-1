@@ -1,0 +1,49 @@
+Finding Documents in the Database.
+--------------------------------------------------------------
+find & findOne
+========================
+
+1.find --> It will find all data inside the database.
+
+Ex:-
+
+db.data.find();
+
+
+output :-
+
+[
+  { _id: ObjectId('66d095d57181d453822710bc'), name: 'millionaire' },
+  { _id: ObjectId('66d096477181d453822710bd'), name: 'millionaire' },
+  { _id: ObjectId('66d096bc7181d453822710be'), name: 'millionaire' },
+  { _id: ObjectId('66d096bc7181d453822710bf'), legends: 'billionaire' },
+  {
+    _id: ObjectId('66d096bc7181d453822710c0'),
+    extraordinary: 'trillionaire'
+  }
+]
+
+
+
+2.findOne --> It will find only First value of the database.
+
+Ex:-
+
+db.data.findOne()
+
+output:-
+
+{ _id: ObjectId('66d095d57181d453822710bc'), name: 'millionaire' }
+test>
+
+
+Note:- Special Case:- 
+------------------------
+if you use finOne() it will give you the first statement having name:"millionaire" but actually i want to
+show only the third statement having name:"millionaire"
+
+db.data.find({"name":"LOKI"}).skip(2).limit(1);
+
+output:-
+
+  { _id: ObjectId('66d096bc7181d453822710be'), name: 'millionaire' },

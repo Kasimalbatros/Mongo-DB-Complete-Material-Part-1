@@ -1,0 +1,11 @@
+Update operations in Mongo DB  ?
+
+===================================
+
+1. updateOne()  and updateMany().
+
+2. Removing  and Renaming fields.
+
+3. Adding,removing items from array.
+
+4. Updating embedded documents.

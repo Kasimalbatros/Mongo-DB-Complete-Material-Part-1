@@ -1,0 +1,70 @@
+Projections in Mongo DB.
+------------------------
+
+
+In MongoDB, projection is used to specify which fields should be included or excluded 
+in the documents returned by a query.
+
+Example:-
+----------
+we have Below fields but i want to show Comment Field Only then we use Projections In Mongo DB.
+Id
+Itile
+Price 
+Comment
+Description.
+
+Note:-  This allows you to control the size of the result set by only retrieving the 
+data that is necessary.
+
+
+
+1. Inclusion Projection.
+--------------------------
+To include specific fields in the result set, you set their value to 1 in the projection
+ document.
+
+Example:
+Retrieve only the name and age fields from documents where age is greater than 25.
+
+db.users.find(
+  { age: { $gt: 25 } },
+  { name: 1, age: 1, _id: 0 }
+)
+
+name: 1 and age: 1: Includes these fields in the result.
+_id: 0: Excludes the _id field (which is included by default).
+
+=========================================================================================================
+
+2.Exclusion Projection
+To exclude specific fields from the result set, you set their value to 0 in the projection document.
+
+Example:
+Retrieve all fields except the password field from documents where active is true.
+
+javascript
+Copy code
+db.users.find(
+  { active: true },
+  { password: 0 }
+)
+password: 0: Excludes this field from the result.
+All other fields are included by default.
+
+
+
+=======================================================================================================
+Note:-
+
+Mixed Inclusion and Exclusion
+MongoDB does not allow mixing inclusion and exclusion in the same 
+projection (with the exception of the _id field). You either specify fields to include 
+or exclude, but not both.
+----------------------------------------------------------------------------------------------------------
+
+Read These Topics Yourself:-
+
+Projection with Array Fields
+Projection with Computed Fields
+Excluding the _id Field

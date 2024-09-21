@@ -1,0 +1,32 @@
+Complex Expressions In Mongo DB.
+--------------------------------
+
+
+The $expr operator in MongoDB allows you to use aggregation expressions within 
+the query language. This is particularly useful when you need to compare fields within 
+the same document.
+
+Example: Using $expr to Compare Fields
+Suppose you have a collection named employees, and each document has fields salary and expectedSalary. You want to find all employees whose actual salary is greater than their expected salary.
+
+Here’s how you can use $expr:
+
+=================================
+db.employees.find({
+  $expr: {
+    $gt: ["$salary", "$expectedSalary"]
+  }
+})
+Explanation:
+$gt: This is the greater-than comparison operator.
+"$salary" and "$expectedSalary": These are references to the fields in each document. The "$" symbol indicates that the value is taken from the document itself.
+
+
+
+
+=====================================================================================================================================================================================================
+
+
+Q1. Find sales where (quatity * price) is greater than target Price  ?
+
+Ans:- See thapa-technical Mongo DB 5 hr 20 minute video  (Timing 1 hour 49 minutes)

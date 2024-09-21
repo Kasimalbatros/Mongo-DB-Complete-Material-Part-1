@@ -1,0 +1,6 @@
+Introduction to Cursors in Mongo DB.
+==========================================================
+
+In MongoDB, a cursor is a method that can be used to iterate, retrieve documents, 
+and more
+

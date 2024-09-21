@@ -1,0 +1,53 @@
+use students;
+
+
+Now inserting one Value
+
+ > db.data.insertOne({'name':'vinod',age:29})
+
+output:-
+
+{
+  acknowledged: true,
+  insertedId: ObjectId('66cf41588da29851b62710bc')
+}
+
+======================================================
+
+Now inserting Many Value
+
+
+db.data.insertMany([{'name':'Avengers'},{'power':'Assemble'},{'secrectAgency':'shield'}]);
+
+output:-
+
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('66cf42238da29851b62710bd'),
+    '1': ObjectId('66cf42238da29851b62710be'),
+    '2': ObjectId('66cf42238da29851b62710bf')
+  }
+}
+
+
+
+
+to see the Whole output whatb actuall you have been created.
+
+> db.data.find();
+
+
+
+output:-
+
+[
+  { _id: ObjectId('66cf41588da29851b62710bc'), name: 'vinod', age: 29 },
+  { _id: ObjectId('66cf42238da29851b62710bd'), name: 'Avengers' },
+  { _id: ObjectId('66cf42238da29851b62710be'), power: 'Assemble' },
+  {
+    _id: ObjectId('66cf42238da29851b62710bf'),
+    secrectAgency: 'shield'
+  }
+]
+ 

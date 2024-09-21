@@ -1,0 +1,1 @@
+Shift + Arrow (UP or down)   ---> this will change cmd value to previous one

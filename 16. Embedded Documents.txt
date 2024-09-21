@@ -1,0 +1,10 @@
+Embedded Documents
+--------------------------
+Video Questions
+
+2 hour 11 minute 50 secs in Thapa technical Mongo DB 
+=====================================================================================================
+
+Query documents inside embedded documents using DOT Notation.
+
+db.collection.find({"parent.child": value })

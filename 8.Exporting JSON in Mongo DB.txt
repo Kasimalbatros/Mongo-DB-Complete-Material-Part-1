@@ -1,0 +1,41 @@
+exporting JSON in MongoDB  ?
+==================================================================================================
+
+1. mongoexport -d shop -c products -o "C:\data\products_export.json" --jsonArray
+  
+
+(exporting the Json file in MongoDB when Array of object is not there.)
+
+{
+"name":"vinod";
+"age":30;
+}
+{
+"name":"raj";
+"age":29;
+}
+
+
+
+
+--------------------------------------------------------------------------------------
+
+
+2. mongoexport products.json -d shop -c products --jsonArray
+
+(exporting the Json file in MongoDB when Array of object is there.)
+
+[{
+name:"vinod";
+age:30;
+},
+{
+name:"raj";
+age:29;
+}]
+
+
+
+Here, --jsonArray accepts  the import  of data expressed  with multiple mongo documents
+within a single JSON Array.
+

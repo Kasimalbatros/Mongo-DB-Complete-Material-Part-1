@@ -1,0 +1,14 @@
+When to ussingle or double quotes.
+
+if there is gap between Key or value please use single od double qoutes otherwise gives syntax error
+----------------------------------------------------------------------------------------------------------
+db.data.insertOne({'name':'vinod',age:29, course name: "english"})
+
+output:- Syntax error
+
+So, 
+Write like below
+
+db.data.insertOne({'name':'vinod',age:29, "course name": "english"})
+
+output:- Successfully worked

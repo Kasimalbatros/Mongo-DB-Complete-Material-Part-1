@@ -1,0 +1,54 @@
+Elements Operator in Mongo DB  ?
+=================================
+
+1. $exists
+2. $type
+3. $size
+
+-  -   -  -
+
+1. $exists :- The $exists operator checks for the presence of a field in a document.
+
+{ field: { $exists: <boolean> } }
+
+true: Matches documents that contain the specified field.
+false: Matches documents that do not contain the specified field.
+
+Ex:-
+
+db.collection.find({
+  email: { $exists: true }
+})
+
+---------------------------------------------------------------------------------------------------------
+
+2. $type :- The $type operator matches documents where the value of a field is of the 
+specified BSON data type.
+
+{ field: { $type: <BSON type> } }
+
+You can specify a BSON type using its string alias or numeric value.
+
+Ex:-
+
+db.collection.find({
+  age: { $type: "int" }
+})
+
+---------------------------------------------------------------------------------------------------------
+
+3. $size :- The $size operator matches any array with the specified number of 
+elements. It’s specifically used to query the size of an array field.
+
+{ field: { $size: <number> } }
+
+Ex:-
+
+db.collection.find({
+  tags: { $size: 3 }
+})
+
+
+
+4. $elemMatch   ---> Learn Yourself
+5. $all         ---> Learn Yourself

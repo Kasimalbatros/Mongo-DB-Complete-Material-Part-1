@@ -1,0 +1,7 @@
+show dbs                     ---> Showing all databases.
+show collections             ---> Showing All collections.
+db.collection-name.find();   ---> showing all documents present inside collections.
+
+
+NOTE:- database is contains multiple collections. whereas collections having multiple
+     documents.

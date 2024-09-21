@@ -1,0 +1,86 @@
+Legends starts MongoDB !
+======================
+Summary for Commands
+
+1. show dbs (or show datases)   ---> Showing all availabe database.
+2. use students ---> (create students name database)
+3. db.dropStudents() ---> (delete the database)
+4. show collections;   ---> showing collections
+5. db.createCollection('collectionname');   ---> create collection
+6. db.collectionname.drop()  --> Delete the Collections 
+
+Note:- use admin (this help to switch current database to admin database)
+
+------------------------------------------------------------------------------------------
+CommandLine-->Mongosh
+
+show dbs (or show datases)
+
+output:-
+admin   40.00 KiB
+config  72.00 KiB
+local   72.00 KiB
+
+Now i want create a database having students
+
+use students
+
+output:-
+switched to db students
+
+show dbs
+
+output:-
+admin   40.00 KiB
+config  72.00 KiB
+local   72.00 KiB
+
+Note:- students database is still not showing. yo show our students database we need to
+create collections
+
+Now Creating collections
+
+db.createCollection('data');
+
+output:-
+
+{ ok: 1 }
+
+
+
+show dbs
+
+output:-
+
+admin      40.00 KiB
+config    108.00 KiB
+local      72.00 KiB
+students    8.00 KiB
+
+
+Note:- Once our collections created then our students database is visible .
+
+show collections;
+
+output:-
+
+data
+
+
+now deleting out database
+
+db.data.drop();
+
+output:-
+ture
+
+show dbs
+
+output:-
+
+admin    40.00 KiB
+config  108.00 KiB
+local    72.00 KiB
+
+Note:- students database is successfully deleted.
+

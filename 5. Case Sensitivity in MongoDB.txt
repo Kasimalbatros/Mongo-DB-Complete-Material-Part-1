@@ -1,0 +1,15 @@
+Case Sensitivity in Mongo DB.
+================================================
+
+1. Collections names are case-sensitive.
+
+2. Field names within documents are also-sensitive.
+
+
+
+db.Product.insertOne({name:'thapa',age:30});        ---> 1st Query
+
+db.product.insertOne({name:'thapa',age:30});         ---> 2nd Query
+
+
+Both are Considered as Different in MongoDB.

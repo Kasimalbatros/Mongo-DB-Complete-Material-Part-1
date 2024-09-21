@@ -1,0 +1,65 @@
+1. Ordered Insert means 
+==========================
+if we insert Three Documents
+
+i.document 1
+ii.document 2
+iii.document 3
+
+if document 1 & and document 3 are correct but error comes in document 2 .Then
+this will insert only document 1.
+
+
+Example:-
+
+db.collection.insertMany(
+  [
+    { _id: 1, name: "Alice" },
+    { _id: 2, name: "Bob" },
+    { _id: 1, name: "Charlie" }  // This will cause an error (duplicate _id)
+  ],
+  { ordered: true }
+)
+
+
+In this case, only the first two documents will be inserted. The third document
+ will cause the operation to stop because of the duplicate _id error.
+=============================================================================================
+2. Unordered Insert means
+---------------------------
+if we insert Three Documents
+
+i.document 1
+ii.document 2
+iii.document 3
+
+if document 1 & and document 3 are correct but error comes in document 2 .
+this will insert document 1 and document 3 and gives error for document 2.
+
+
+Ex:-
+
+db.collection.insertMany(
+  [
+    { _id: 1, name: "Alice" },
+    { _id: 2, name: "Bob" },
+    { _id: 1, name: "Charlie" }  // This will cause an error (duplicate _id)
+  ],
+  { ordered: false }
+)
+
+In this case, MongoDB will insert "Alice" and "Bob" successfully.
+ "Charlie" will fail, but the operation will not stop, and the error will be 
+reported after attempting to insert all documents.
+===================================================================================================
+
+Key Points:-
+----------------
+1.Ordered Insert: Stops on the first error.
+2.Unordered Insert: Continues to insert other documents even if an error occurs.
+
+
+You can specify the type of insert using the ordered option in the insertMany method.
+ If ordered is set to true (which is the default), it performs an ordered insert; if set 
+to false, it performs an unordered insert.
+==================================================================================================

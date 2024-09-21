@@ -1,0 +1,102 @@
+Logical Operators in Mongo DB.
+------------------------------
+1. $and
+--------
+Joins query clauses with a logical AND returns all documents that match the conditions 
+of both clauses.
+
+Syntax:- {$and:[{condition1},{condition2},...]
+
+Example:-
+
+db.collection.find({
+  $and: [
+    { field1: { $condition1: value1 } },
+    { field2: { $condition2: value2 } }
+  ]
+})
+
+
+Example with Proper values:-
+
+db.collection.find({
+  $and: [
+    { age: { $gt: 25 } },
+    { score: { $lt: 90 } }
+  ]
+})
+
+=====================================================================================================
+2.$not
+-------
+Inverts the effect of a query expression and returns documents that do not match the
+ query expression.
+
+
+{field:{$not :{operator:value}}}
+
+Example:-
+
+db.collection.find({
+  field: { $not: { $condition: value } }
+})
+
+
+
+Example with Proper value:-
+
+db.collection.find({
+  age: { $not: { $eq: 30 } }
+})
+
+========================================================================================================
+3.$nor
+-----
+Joins query clauses with a logical NOR returns all documents that fail to match both 
+clauses.
+
+Example:-
+
+db.collection.find({
+  $nor: [
+    { field1: { $condition1: value1 } },
+    { field2: { $condition2: value2 } }
+  ]
+})
+
+
+Example with proper value:-
+------------------------------
+
+db.collection.find({
+  $nor: [
+    { age: { $gt: 50 } },
+    { score: { $lt: 60 } }
+  ]
+})
+
+=====================================================================================================
+4.$or
+------
+Joins query clauses with a logical OR returns all documents that match the conditions 
+of either clause.
+
+Example Code:-
+
+db.collection.find({
+  $or: [
+    { field1: { $condition1: value1 } },
+    { field2: { $condition2: value2 } }
+  ]
+})
+
+
+Example Code with proper Value
+
+db.collection.find({
+  $or: [
+    { age: { $lt: 20 } },
+    { score: { $gt: 85 } }
+  ]
+})
+

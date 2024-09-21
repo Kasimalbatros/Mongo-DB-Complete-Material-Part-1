@@ -1,0 +1,5 @@
+How to paste Text In cmd  ?
+
+select data Ctrl + C
+
+right click where you want to paste in the CMD.
